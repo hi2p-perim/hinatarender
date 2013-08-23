@@ -4,6 +4,7 @@
 #include "common.h"
 #include "math.h"
 #include <mutex>
+#include <string>
 
 HINATA_NAMESPACE_BEGIN
 
@@ -12,11 +13,19 @@ class Image
 public:
 
 	Image(int width, int height);
-	Image::Image(const std::string& path, bool verticalFlip = false);
+	Image(const std::string& path, bool verticalFlip = false);
 	
+private:
+
+	Image(const Image&);
+	Image(Image&&);
+	void operator=(const Image&);
+	void operator=(Image&&);
+
+public:
+
 	int Width() { return width; }
 	int Height() { return height; }
-
 	Vec3d Evaluate(const Vec2d& uv);
 	void Accumulate(const Vec4i& rect, const std::vector<Vec3d>& v);
 	void Save(const std::string& path, double weight);

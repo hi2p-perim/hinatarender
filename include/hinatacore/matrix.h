@@ -7,8 +7,7 @@ HINATA_NAMESPACE_BEGIN
 
 template <typename T> struct Vec3;
 template <typename T> struct Vec4;
-
-// --------------------------------------------------------------------------------
+template <typename T> struct Mat4;
 
 /*!
 	3x3 matrix.
@@ -29,6 +28,8 @@ struct Mat3
 	// Constructors
 	HINATA_FORCE_INLINE Mat3();
 	HINATA_FORCE_INLINE Mat3(const Mat3<T>& m);
+	HINATA_FORCE_INLINE Mat3(const Mat4<T>& m);
+	template <typename T2> HINATA_FORCE_INLINE Mat3(const Mat3<T2>& m);
 	HINATA_FORCE_INLINE explicit Mat3(T v);
 	HINATA_FORCE_INLINE Mat3(const Vec3<T>& v0, const Vec3<T>& v1, const Vec3<T>& v2);
 	HINATA_FORCE_INLINE Mat3(
@@ -62,7 +63,7 @@ typedef Mat3<int> Mat3i;
 typedef Mat3<float> Mat3f;
 typedef Mat3<double> Mat3d;
 
-// --------------------------------------------------------------------------------
+// ------------------------------------------------------------------------------------------
 
 /*!
 	4x4 matrix.
@@ -84,6 +85,7 @@ struct Mat4
 	// Constructors
 	HINATA_FORCE_INLINE Mat4();
 	HINATA_FORCE_INLINE Mat4(const Mat4<T>& m);
+	template <typename T2> HINATA_FORCE_INLINE Mat4(const Mat4<T2>& m);
 	HINATA_FORCE_INLINE explicit Mat4(T v);
 	HINATA_FORCE_INLINE Mat4(const Vec4<T>& v0, const Vec4<T>& v1, const Vec4<T>& v2, const Vec4<T>& v3);
 	HINATA_FORCE_INLINE Mat4(

@@ -5,6 +5,10 @@
 
 HINATA_NAMESPACE_BEGIN
 
+template <typename T> struct Vec2;
+template <typename T> struct Vec3;
+template <typename T> struct Vec4;
+
 /*!
 	2D vector.
 	\tparam T Internal value type.
@@ -23,6 +27,9 @@ struct Vec2
 	// Constructors
 	HINATA_FORCE_INLINE Vec2();
 	HINATA_FORCE_INLINE Vec2(const Vec2<T>& v);
+	HINATA_FORCE_INLINE Vec2(const Vec3<T>& v);
+	HINATA_FORCE_INLINE Vec2(const Vec4<T>& v);
+	template <typename T2> HINATA_FORCE_INLINE Vec2(const Vec2<T2>& v);
 	HINATA_FORCE_INLINE explicit Vec2(T v);
 	HINATA_FORCE_INLINE Vec2(T x, T y);
 
@@ -47,7 +54,7 @@ typedef Vec2<float> Vec2f;
 typedef Vec2<double> Vec2d;
 typedef Vec2<int> Vec2i;
 
-// --------------------------------------------------------------------------------
+// ------------------------------------------------------------------------------------------
 
 /*!
 	3D vector.
@@ -67,6 +74,8 @@ struct Vec3
 	// Constructors
 	HINATA_FORCE_INLINE Vec3();
 	HINATA_FORCE_INLINE Vec3(const Vec3<T>& v);
+	HINATA_FORCE_INLINE Vec3(const Vec4<T>& v);
+	template <typename T2> HINATA_FORCE_INLINE Vec3(const Vec3<T2>& v);
 	HINATA_FORCE_INLINE explicit Vec3(T v);
 	HINATA_FORCE_INLINE Vec3(T x, T y, T z);
 	HINATA_FORCE_INLINE Vec3(T x, const Vec2<T>& v);
@@ -93,7 +102,7 @@ typedef Vec3<float> Vec3f;
 typedef Vec3<double> Vec3d;
 typedef Vec3<int> Vec3i;
 
-// --------------------------------------------------------------------------------
+// ------------------------------------------------------------------------------------------
 
 /*!
 	4D vector.
@@ -113,6 +122,7 @@ struct Vec4
 	// Constructors
 	HINATA_FORCE_INLINE Vec4();
 	HINATA_FORCE_INLINE Vec4(const Vec4<T>& v);
+	template <typename T2> HINATA_FORCE_INLINE Vec4(const Vec4<T2>& v);
 	HINATA_FORCE_INLINE explicit Vec4(T v);
 	HINATA_FORCE_INLINE Vec4(T x, T y, T z, T w);
 	HINATA_FORCE_INLINE Vec4(T x, const Vec3<T>& v);

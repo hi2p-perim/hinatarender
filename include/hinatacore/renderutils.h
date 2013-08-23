@@ -10,7 +10,7 @@ class RenderUtils
 {
 private:
 
-	RenderUtils() {}
+	RenderUtils();
 	RenderUtils(const RenderUtils&);
 	RenderUtils(const RenderUtils&&);
 	RenderUtils& operator=(const RenderUtils&);

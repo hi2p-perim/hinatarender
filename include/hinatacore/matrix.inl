@@ -17,6 +17,23 @@ HINATA_FORCE_INLINE Mat3<T>::Mat3(const Mat3<T>& m)
 }
 
 template <typename T>
+HINATA_FORCE_INLINE Mat3<T>::Mat3( const Mat4<T>& m )
+{
+	data[0] = Vec3<T>(m.data[0]);
+	data[1] = Vec3<T>(m.data[1]);
+	data[2] = Vec3<T>(m.data[2]);
+}
+
+template <typename T>
+template <typename T2>
+HINATA_FORCE_INLINE Mat3<T>::Mat3( const Mat3<T2>& m )
+{
+	data[0] = Vec3<T>(m.data[0]);
+	data[1] = Vec3<T>(m.data[1]);
+	data[2] = Vec3<T>(m.data[2]);
+}
+
+template <typename T>
 HINATA_FORCE_INLINE Mat3<T>::Mat3(T v)
 {
 	data[0] = Vec3<T>(v);
@@ -279,7 +296,7 @@ HINATA_FORCE_INLINE bool operator!=(const Mat3<T>& m1, const Mat3<T>& m2)
 	return m1[0] != m2[0] || m1[1] != m2[1] || m1[2] != m2[2];
 }
 
-// --------------------------------------------------------------------------------
+// ------------------------------------------------------------------------------------------
 
 template <typename T>
 HINATA_FORCE_INLINE Mat4<T>::Mat4()
@@ -297,12 +314,22 @@ HINATA_FORCE_INLINE Mat4<T>::Mat4(const Mat4<T>& m)
 }
 
 template <typename T>
+template <typename T2>
+HINATA_FORCE_INLINE Mat4<T>::Mat4( const Mat4<T2>& m )
+{
+	data[0] = Vec4<T>(m.data[0]);
+	data[1] = Vec4<T>(m.data[1]);
+	data[2] = Vec4<T>(m.data[2]);
+	data[3] = Vec4<T>(m.data[3]);
+}
+
+template <typename T>
 HINATA_FORCE_INLINE Mat4<T>::Mat4(T v)
 {
-	data[0] = Vec4<T>(v);
-	data[1] = Vec4<T>(v);
-	data[2] = Vec4<T>(v);
-	data[3] = Vec4<T>(v);
+	data[0] = Vec4<T>(v, T(0), T(0), T(0));
+	data[1] = Vec4<T>(T(0), v, T(0), T(0));
+	data[2] = Vec4<T>(T(0), T(0), v, T(0));
+	data[3] = Vec4<T>(T(0), T(0), T(0), v);
 }
 
 template <typename T>

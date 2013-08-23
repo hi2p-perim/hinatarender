@@ -11,7 +11,7 @@
 	#define HINATA_DEBUG_MODE
 #endif
 
-// ----------------------------------------------------------------------
+// --------------------------------------------------------------------------------
 
 // Platform
 #ifdef _WIN32
@@ -56,7 +56,7 @@
 	#error "Unsupportted compiler"
 #endif
 
-// ----------------------------------------------------------------------
+// --------------------------------------------------------------------------------
 
 // Library import or export
 #ifdef HINATA_COMPILER_MSVC
@@ -83,7 +83,7 @@
 	#define HINATA_PLUGIN_API 
 #endif
 
-// ----------------------------------------------------------------------
+// --------------------------------------------------------------------------------
 
 /*!
 	\def HINATA_FORCE_NO_SIMD
@@ -136,7 +136,7 @@
 #define HINATA_ALIGN_16 HINATA_ALIGN(16)
 #define HINATA_ALIGN_32 HINATA_ALIGN(32)
 
-// ----------------------------------------------------------------------
+// --------------------------------------------------------------------------------
 
 // Namespace
 #define HINATA_NAMESPACE_BEGIN namespace hinata {
@@ -145,7 +145,7 @@
 #define HINATA_TEST_NAMESPACE_BEGIN namespace hinatatest {
 #define HINATA_TEST_NAMESPACE_END }
 
-// ----------------------------------------------------------------------
+// --------------------------------------------------------------------------------
 
 #define HINATA_SAFE_DELETE(val) if ((val) != NULL ) { delete (val); (val) = NULL; }
 #define HINATA_SAFE_DELETE_ARRAY(val) if ((val) != NULL ) { delete[] (val); (val) = NULL; }

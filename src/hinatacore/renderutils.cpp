@@ -69,8 +69,10 @@ hinata::Vec2d RenderUtils::UniformSampleTriangle( const Vec2d& u )
 
 void RenderUtils::CreateCoordinateSystem( const Vec3d& a, Vec3d& b, Vec3d& c )
 {
-	c = std::abs(a.x) > std::abs(a.y) ? Normalize(Vec3d(a.z, 0, -a.x)) : Normalize(Vec3d(0, a.z, -a.y));
-	b = Normalize(Cross(c, a));
+	c = std::abs(a.x) > std::abs(a.y)
+		? Math::Normalize(Vec3d(a.z, 0, -a.x))
+		: Math::Normalize(Vec3d(0, a.z, -a.y));
+	b = Math::Normalize(Math::Cross(c, a));
 }
 
 HINATA_NAMESPACE_END

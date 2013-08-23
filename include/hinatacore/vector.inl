@@ -19,6 +19,31 @@ HINATA_FORCE_INLINE Vec2<T>::Vec2(const Vec2<T>& v)
 }
 
 template <typename T>
+HINATA_FORCE_INLINE Vec2<T>::Vec2(const Vec3<T>& v)
+	: x(v.x)
+	, y(v.y)
+{
+
+}
+
+template <typename T>
+HINATA_FORCE_INLINE Vec2<T>::Vec2(const Vec4<T>& v)
+	: x(v.x)
+	, y(v.y)
+{
+
+}
+
+template <typename T>
+template <typename T2>
+HINATA_FORCE_INLINE Vec2<T>::Vec2(const Vec2<T2>& v)
+	: x(T(v.x))
+	, y(T(v.y))
+{
+
+}
+
+template <typename T>
 HINATA_FORCE_INLINE Vec2<T>::Vec2(T v)
 	: x(v)
 	, y(v)
@@ -210,7 +235,7 @@ HINATA_FORCE_INLINE bool operator!=(const Vec2<T>& v1, const Vec2<T>& v2)
 	return v1.x != v2.x || v1.y != v2.y;
 }
 
-// --------------------------------------------------------------------------------
+// ------------------------------------------------------------------------------------------
 
 template <typename T>
 HINATA_FORCE_INLINE Vec3<T>::Vec3()
@@ -226,6 +251,25 @@ HINATA_FORCE_INLINE Vec3<T>::Vec3(const Vec3<T>& v)
 	: x(v.x)
 	, y(v.y)
 	, z(v.z)
+{
+
+}
+
+template <typename T>
+HINATA_FORCE_INLINE Vec3<T>::Vec3(const Vec4<T>& v)
+	: x(v.x)
+	, y(v.y)
+	, z(v.z)
+{
+
+}
+
+template <typename T>
+template <typename T2>
+HINATA_FORCE_INLINE Vec3<T>::Vec3(const Vec3<T2>& v)
+	: x(T(v.x))
+	, y(T(v.y))
+	, z(T(v.z))
 {
 
 }
@@ -449,7 +493,7 @@ HINATA_FORCE_INLINE bool operator!=(const Vec3<T>& v1, const Vec3<T>& v2)
 	return v1.x != v2.x || v1.y != v2.y || v1.z != v2.z;
 }
 
-// --------------------------------------------------------------------------------
+// ------------------------------------------------------------------------------------------
 
 template <typename T>
 HINATA_FORCE_INLINE Vec4<T>::Vec4()
@@ -467,6 +511,17 @@ HINATA_FORCE_INLINE Vec4<T>::Vec4(const Vec4<T>& v)
 	, y(v.y)
 	, z(v.z)
 	, w(v.w)
+{
+
+}
+
+template <typename T>
+template <typename T2>
+HINATA_FORCE_INLINE Vec4<T>::Vec4(const Vec4<T2>& v)
+	: x(T(v.x))
+	, y(T(v.y))
+	, z(T(v.z))
+	, w(T(v.w))
 {
 
 }

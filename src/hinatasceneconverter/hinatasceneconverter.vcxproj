@@ -11,9 +11,10 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{59823727-AC36-4212-9A32-D675476F9DD8}</ProjectGuid>
+    <ProjectGuid>{DF53A966-FA62-493B-9C90-A9AB6E6180DB}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
-    <RootNamespace>hinata</RootNamespace>
+    <RootNamespace>sceneconverter</RootNamespace>
+    <ProjectName>hinatasceneconverter</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -42,14 +43,14 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>true</LinkIncremental>
     <OutDir>$(SolutionDir)bin\</OutDir>
-    <IncludePath>$(BOOST_ROOT);$(SolutionDir)\include;$(IncludePath)</IncludePath>
-    <LibraryPath>$(BOOST_ROOT)\lib;$(SolutionDir)\lib;$(LibraryPath)</LibraryPath>
+    <IncludePath>$(BOOST_ROOT);$(SolutionDir)\include;$(SolutionDir)external\assimp-24daead8cb\include;$(IncludePath)</IncludePath>
+    <LibraryPath>$(BOOST_ROOT)\lib;$(SolutionDir)\lib;$(SolutionDir)external\assimp-24daead8cb\lib;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
     <OutDir>$(SolutionDir)bin\</OutDir>
-    <IncludePath>$(BOOST_ROOT);$(SolutionDir)\include;$(IncludePath)</IncludePath>
-    <LibraryPath>$(BOOST_ROOT)\lib;$(SolutionDir)\lib;$(LibraryPath)</LibraryPath>
+    <IncludePath>$(BOOST_ROOT);$(SolutionDir)\include;$(SolutionDir)external\assimp-24daead8cb\include;$(IncludePath)</IncludePath>
+    <LibraryPath>$(BOOST_ROOT)\lib;$(SolutionDir)\lib;$(SolutionDir)external\assimp-24daead8cb\lib;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -58,12 +59,11 @@
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <SDLCheck>true</SDLCheck>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalDependencies>hinatacore.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>hinatacore.lib;assimpD.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -75,18 +75,21 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <SDLCheck>true</SDLCheck>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
-      <AdditionalDependencies>hinatacore.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>hinatacore.lib;assimp.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="colladaloader.cpp" />
     <ClCompile Include="main.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="colladaloader.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

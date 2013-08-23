@@ -16,14 +16,50 @@
     <Filter Include="Header Files\math">
       <UniqueIdentifier>{00905b89-b359-4201-8269-9fba1dfd9cd7}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Header Files\render">
-      <UniqueIdentifier>{38d93c63-1829-4aed-9935-d8bbbf92a248}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\render">
-      <UniqueIdentifier>{226561a0-86c5-4b8a-92e8-0c786177fbe6}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Source Files\math">
       <UniqueIdentifier>{0556e2ad-11e0-4a34-8d9d-ebad9b0a1cdd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\base">
+      <UniqueIdentifier>{38d93c63-1829-4aed-9935-d8bbbf92a248}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\base\bsdf">
+      <UniqueIdentifier>{7ead8922-17e9-4977-b20f-7ea72382077e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\base\shape">
+      <UniqueIdentifier>{02cafdfa-b34a-4086-b704-7cc60f4b141f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\base">
+      <UniqueIdentifier>{226561a0-86c5-4b8a-92e8-0c786177fbe6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\base\bsdf">
+      <UniqueIdentifier>{e494df63-813f-4255-b1b7-eb19854d34b8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\base\shape">
+      <UniqueIdentifier>{1af6338f-ab32-4f38-a0b2-a4e338378982}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\render">
+      <UniqueIdentifier>{e66e38d1-5a5d-4c55-8fe8-b0147ec98b23}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\render">
+      <UniqueIdentifier>{599a2cd7-b1db-4dcd-a980-5a5dc13760a9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\base\light">
+      <UniqueIdentifier>{624c2b72-18ac-4832-a70c-61f3b10cf2e2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\base\camera">
+      <UniqueIdentifier>{1ec402b5-17de-46b7-bcb4-f95a12ca8f05}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\base\light">
+      <UniqueIdentifier>{2fce8619-0e3d-4327-95da-d413d6076fd1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\base\camera">
+      <UniqueIdentifier>{6f87a91a-2492-469f-af59-d93b30c12208}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\base\scene">
+      <UniqueIdentifier>{0a10e65c-3d4b-4a05-96d3-b293b90a74f8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\base\scene">
+      <UniqueIdentifier>{719febd1-a587-4366-bb12-55bed62710fc}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -36,26 +72,104 @@
     <ClInclude Include="..\..\include\hinatacore\math.h">
       <Filter>Header Files\math</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\include\hinatacore\mathutils.h">
-      <Filter>Header Files\math</Filter>
-    </ClInclude>
     <ClInclude Include="..\..\include\hinatacore\matrix.h">
-      <Filter>Header Files\math</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\include\hinatacore\quat.h">
       <Filter>Header Files\math</Filter>
     </ClInclude>
     <ClInclude Include="..\..\include\hinatacore\vector.h">
       <Filter>Header Files\math</Filter>
     </ClInclude>
     <ClInclude Include="..\..\include\hinatacore\renderutils.h">
-      <Filter>Header Files\render</Filter>
+      <Filter>Header Files\base</Filter>
     </ClInclude>
     <ClInclude Include="..\..\include\hinatacore\random.h">
       <Filter>Header Files\math</Filter>
     </ClInclude>
     <ClInclude Include="..\..\include\hinatacore\image.h">
+      <Filter>Header Files\base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\hinatacore\mathfuncs.h">
+      <Filter>Header Files\math</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\hinatacore\intersection.h">
+      <Filter>Header Files\base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\hinatacore\syncqueue.h">
+      <Filter>Header Files\base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\hinatacore\texture.h">
+      <Filter>Header Files\base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\hinatacore\bsdf.h">
+      <Filter>Header Files\base\bsdf</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\hinatacore\diffusebsdf.h">
+      <Filter>Header Files\base\bsdf</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\hinatacore\perfectmirrorbsdf.h">
+      <Filter>Header Files\base\bsdf</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\hinatacore\dielecticbsdf.h">
+      <Filter>Header Files\base\bsdf</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\hinatacore\glossyconductorbsdf.h">
+      <Filter>Header Files\base\bsdf</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\hinatacore\shape.h">
+      <Filter>Header Files\base\shape</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\hinatacore\sphere.h">
+      <Filter>Header Files\base\shape</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\hinatacore\ray.h">
+      <Filter>Header Files\base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\hinatacore\triangle.h">
+      <Filter>Header Files\base\shape</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\hinatacore\primitive.h">
+      <Filter>Header Files\base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\hinatacore\arealight.h">
+      <Filter>Header Files\base\light</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\hinatacore\perspectivecamera.h">
+      <Filter>Header Files\base\camera</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\hinatacore\environmentlight.h">
+      <Filter>Header Files\base\light</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\hinatacore\scene.h">
+      <Filter>Header Files\base\scene</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\hinatacore\cornellboxscene.h">
+      <Filter>Header Files\base\scene</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\hinatacore\bvhscene.h">
+      <Filter>Header Files\base\scene</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\hinatacore\renderer.h">
       <Filter>Header Files\render</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\hinatacore\aabb.h">
+      <Filter>Header Files\math</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\hinatacore\mathconsts.h">
+      <Filter>Header Files\math</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\hinatacore\ptrenderer.h">
+      <Filter>Header Files\render</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\hinatacore\sampler.h">
+      <Filter>Header Files\base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\hinatacore\pssmltrenderer.h">
+      <Filter>Header Files\render</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\hinatacore\pssmltsampler.h">
+      <Filter>Header Files\render</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\hinatacore\scenedata.h">
+      <Filter>Header Files\base\scene</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -63,12 +177,75 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="renderutils.cpp">
-      <Filter>Source Files\render</Filter>
+      <Filter>Source Files\base</Filter>
     </ClCompile>
     <ClCompile Include="random.cpp">
       <Filter>Source Files\math</Filter>
     </ClCompile>
     <ClCompile Include="image.cpp">
+      <Filter>Source Files\base</Filter>
+    </ClCompile>
+    <ClCompile Include="texture.cpp">
+      <Filter>Source Files\base</Filter>
+    </ClCompile>
+    <ClCompile Include="bsdf.cpp">
+      <Filter>Source Files\base\bsdf</Filter>
+    </ClCompile>
+    <ClCompile Include="diffusebsdf.cpp">
+      <Filter>Source Files\base\bsdf</Filter>
+    </ClCompile>
+    <ClCompile Include="perfectmirrorbsdf.cpp">
+      <Filter>Source Files\base\bsdf</Filter>
+    </ClCompile>
+    <ClCompile Include="dielecticbsdf.cpp">
+      <Filter>Source Files\base\bsdf</Filter>
+    </ClCompile>
+    <ClCompile Include="glossyconductorbsdf.cpp">
+      <Filter>Source Files\base\bsdf</Filter>
+    </ClCompile>
+    <ClCompile Include="sphere.cpp">
+      <Filter>Source Files\base\shape</Filter>
+    </ClCompile>
+    <ClCompile Include="triangle.cpp">
+      <Filter>Source Files\base\shape</Filter>
+    </ClCompile>
+    <ClCompile Include="primitive.cpp">
+      <Filter>Source Files\base</Filter>
+    </ClCompile>
+    <ClCompile Include="arealight.cpp">
+      <Filter>Source Files\base\light</Filter>
+    </ClCompile>
+    <ClCompile Include="perspectivecamera.cpp">
+      <Filter>Source Files\base\camera</Filter>
+    </ClCompile>
+    <ClCompile Include="environmentlight.cpp">
+      <Filter>Source Files\base\light</Filter>
+    </ClCompile>
+    <ClCompile Include="scene.cpp">
+      <Filter>Source Files\base\scene</Filter>
+    </ClCompile>
+    <ClCompile Include="cornellboxscene.cpp">
+      <Filter>Source Files\base\scene</Filter>
+    </ClCompile>
+    <ClCompile Include="bvhscene.cpp">
+      <Filter>Source Files\base\scene</Filter>
+    </ClCompile>
+    <ClCompile Include="renderer.cpp">
+      <Filter>Source Files\render</Filter>
+    </ClCompile>
+    <ClCompile Include="aabb.cpp">
+      <Filter>Source Files\math</Filter>
+    </ClCompile>
+    <ClCompile Include="ptrenderer.cpp">
+      <Filter>Source Files\render</Filter>
+    </ClCompile>
+    <ClCompile Include="pssmltrenderer.cpp">
+      <Filter>Source Files\render</Filter>
+    </ClCompile>
+    <ClCompile Include="sampler.cpp">
+      <Filter>Source Files\base</Filter>
+    </ClCompile>
+    <ClCompile Include="pssmltsampler.cpp">
       <Filter>Source Files\render</Filter>
     </ClCompile>
   </ItemGroup>
@@ -79,8 +256,11 @@
     <None Include="..\..\include\hinatacore\vector.inl">
       <Filter>Header Files\math</Filter>
     </None>
-    <None Include="..\..\include\hinatacore\mathutils.inl">
+    <None Include="..\..\include\hinatacore\mathfuncs.inl">
       <Filter>Header Files\math</Filter>
+    </None>
+    <None Include="..\..\include\hinatacore\syncqueue.inl">
+      <Filter>Header Files\base</Filter>
     </None>
   </ItemGroup>
 </Project>

@@ -17,13 +17,13 @@
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
-    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <ConfigurationType>StaticLibrary</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
     <PlatformToolset>v110</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
-    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <ConfigurationType>StaticLibrary</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
     <PlatformToolset>v110</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
@@ -41,20 +41,18 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <OutDir>$(SolutionDir)lib\</OutDir>
-    <IncludePath>$(BOOST_ROOT);$(SolutionDir)\include;$(SolutionDir)external\FreeImage-3.15.4\Dist;$(IncludePath)</IncludePath>
-    <LibraryPath>$(SolutionDir)external\FreeImage-3.15.4\Dist;$(LibraryPath)</LibraryPath>
+    <IncludePath>$(BOOST_ROOT);$(SolutionDir)\include;$(IncludePath)</IncludePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <OutDir>$(SolutionDir)lib\</OutDir>
-    <IncludePath>$(BOOST_ROOT);$(SolutionDir)\include;$(SolutionDir)external\FreeImage-3.15.4\Dist;$(IncludePath)</IncludePath>
-    <LibraryPath>$(SolutionDir)external\FreeImage-3.15.4\Dist;$(LibraryPath)</LibraryPath>
+    <IncludePath>$(BOOST_ROOT);$(SolutionDir)\include;$(IncludePath)</IncludePath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
       <PrecompiledHeader>Use</PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
-      <PreprocessorDefinitions>HINATA_EXPORTS;WIN32;_DEBUG;_WINDOWS;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;WIN32;_DEBUG;_WINDOWS;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <SDLCheck>true</SDLCheck>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
     </ClCompile>
@@ -71,7 +69,7 @@
       <Optimization>MaxSpeed</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
-      <PreprocessorDefinitions>HINATA_EXPORTS;WIN32;NDEBUG;_WINDOWS;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;WIN32;NDEBUG;_WINDOWS;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <SDLCheck>true</SDLCheck>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
     </ClCompile>
@@ -84,29 +82,77 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="..\..\include\hinatacore\aabb.h" />
+    <ClInclude Include="..\..\include\hinatacore\arealight.h" />
+    <ClInclude Include="..\..\include\hinatacore\bsdf.h" />
+    <ClInclude Include="..\..\include\hinatacore\bvhscene.h" />
     <ClInclude Include="..\..\include\hinatacore\common.h" />
+    <ClInclude Include="..\..\include\hinatacore\cornellboxscene.h" />
+    <ClInclude Include="..\..\include\hinatacore\dielecticbsdf.h" />
+    <ClInclude Include="..\..\include\hinatacore\diffusebsdf.h" />
+    <ClInclude Include="..\..\include\hinatacore\environmentlight.h" />
+    <ClInclude Include="..\..\include\hinatacore\glossyconductorbsdf.h" />
     <ClInclude Include="..\..\include\hinatacore\image.h" />
+    <ClInclude Include="..\..\include\hinatacore\intersection.h" />
     <ClInclude Include="..\..\include\hinatacore\math.h" />
-    <ClInclude Include="..\..\include\hinatacore\mathutils.h" />
+    <ClInclude Include="..\..\include\hinatacore\mathconsts.h" />
+    <ClInclude Include="..\..\include\hinatacore\mathfuncs.h" />
     <ClInclude Include="..\..\include\hinatacore\matrix.h" />
-    <ClInclude Include="..\..\include\hinatacore\quat.h" />
+    <ClInclude Include="..\..\include\hinatacore\pssmltsampler.h" />
+    <ClInclude Include="..\..\include\hinatacore\ptrenderer.h" />
+    <ClInclude Include="..\..\include\hinatacore\perfectmirrorbsdf.h" />
+    <ClInclude Include="..\..\include\hinatacore\perspectivecamera.h" />
+    <ClInclude Include="..\..\include\hinatacore\primitive.h" />
+    <ClInclude Include="..\..\include\hinatacore\pssmltrenderer.h" />
     <ClInclude Include="..\..\include\hinatacore\random.h" />
+    <ClInclude Include="..\..\include\hinatacore\ray.h" />
+    <ClInclude Include="..\..\include\hinatacore\renderer.h" />
     <ClInclude Include="..\..\include\hinatacore\renderutils.h" />
+    <ClInclude Include="..\..\include\hinatacore\sampler.h" />
+    <ClInclude Include="..\..\include\hinatacore\scene.h" />
+    <ClInclude Include="..\..\include\hinatacore\scenedata.h" />
+    <ClInclude Include="..\..\include\hinatacore\shape.h" />
+    <ClInclude Include="..\..\include\hinatacore\sphere.h" />
+    <ClInclude Include="..\..\include\hinatacore\syncqueue.h" />
+    <ClInclude Include="..\..\include\hinatacore\texture.h" />
+    <ClInclude Include="..\..\include\hinatacore\triangle.h" />
     <ClInclude Include="..\..\include\hinatacore\vector.h" />
     <ClInclude Include="pch.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="aabb.cpp" />
+    <ClCompile Include="arealight.cpp" />
+    <ClCompile Include="bvhscene.cpp" />
+    <ClCompile Include="cornellboxscene.cpp" />
+    <ClCompile Include="dielecticbsdf.cpp" />
+    <ClCompile Include="diffusebsdf.cpp" />
+    <ClCompile Include="environmentlight.cpp" />
+    <ClCompile Include="glossyconductorbsdf.cpp" />
     <ClCompile Include="image.cpp" />
+    <ClCompile Include="bsdf.cpp" />
+    <ClCompile Include="pssmltrenderer.cpp" />
+    <ClCompile Include="pssmltsampler.cpp" />
+    <ClCompile Include="ptrenderer.cpp" />
+    <ClCompile Include="perfectmirrorbsdf.cpp" />
+    <ClCompile Include="perspectivecamera.cpp" />
+    <ClCompile Include="primitive.cpp" />
+    <ClCompile Include="renderer.cpp" />
+    <ClCompile Include="sampler.cpp" />
+    <ClCompile Include="scene.cpp" />
+    <ClCompile Include="sphere.cpp" />
+    <ClCompile Include="texture.cpp" />
     <ClCompile Include="pch.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
     </ClCompile>
     <ClCompile Include="random.cpp" />
     <ClCompile Include="renderutils.cpp" />
+    <ClCompile Include="triangle.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="..\..\include\hinatacore\mathutils.inl" />
+    <None Include="..\..\include\hinatacore\mathfuncs.inl" />
     <None Include="..\..\include\hinatacore\matrix.inl" />
+    <None Include="..\..\include\hinatacore\syncqueue.inl" />
     <None Include="..\..\include\hinatacore\vector.inl" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
