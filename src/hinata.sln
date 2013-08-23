@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "core", "core", "{03A5F628-B483-41EF-9F97-61CAAA4F3C5E}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "hinatacore", "src\hinatacore\hinatacore.vcxproj", "{58A32727-F730-4F0B-A16C-8DEEFFA42BC4}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "hinata", "src\hinata\hinata.vcxproj", "{59823727-AC36-4212-9A32-D675476F9DD8}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{58A32727-F730-4F0B-A16C-8DEEFFA42BC4}.Debug|Win32.ActiveCfg = Debug|Win32
+		{58A32727-F730-4F0B-A16C-8DEEFFA42BC4}.Debug|Win32.Build.0 = Debug|Win32
+		{58A32727-F730-4F0B-A16C-8DEEFFA42BC4}.Release|Win32.ActiveCfg = Release|Win32
+		{58A32727-F730-4F0B-A16C-8DEEFFA42BC4}.Release|Win32.Build.0 = Release|Win32
+		{59823727-AC36-4212-9A32-D675476F9DD8}.Debug|Win32.ActiveCfg = Debug|Win32
+		{59823727-AC36-4212-9A32-D675476F9DD8}.Debug|Win32.Build.0 = Debug|Win32
+		{59823727-AC36-4212-9A32-D675476F9DD8}.Release|Win32.ActiveCfg = Release|Win32
+		{59823727-AC36-4212-9A32-D675476F9DD8}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{58A32727-F730-4F0B-A16C-8DEEFFA42BC4} = {03A5F628-B483-41EF-9F97-61CAAA4F3C5E}
+	EndGlobalSection
+EndGlobal
